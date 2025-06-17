@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }body {
+            background-image: url("destination1.jpg"); 
+            background-size: cover;
+        }
+        
+
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            box-sizing: border-box;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form>
+        <h2>Contact Form</h2>
+        <input type="text" name="fname" placeholder="Enter your first name" required>
+        <input type="text" name="lname" placeholder="Enter your last name" required>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <textarea name="address" placeholder="Enter your address" required></textarea>
+        <input type="submit" value="Submit" style="background-color: green; color: white;">
+
+    </form>
+    <br>
+    <center> <button class="btn-custom" onclick="getStarted()">Back</button></center>
+        <script>
+            function getStarted() {
+                window.location.href = "home1.html";  
+            }
+        </script>
+        </div>
+</body>
+</html>

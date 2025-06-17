@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Page Carousel</title>
+    <style>
+            
+
+
+
+        footer{
+            text-align:center;
+            background-color: black;
+            padding: 10px 10px;
+            color:white;
+           
+        }
+        img{  
+            border-radius:8px;
+            border:50px;
+            margin:80px;
+
+
+}
+.a{
+    text-align:left;
+    padding:120px;
+    margin:0px;
+}
+.b{
+    text-align:right;
+    padding:120px;
+    margin:0px;
+}
+  
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 30px;
+            z-index: 10;
+        }
+
+        .carousel-button-left {
+            left: 10px;
+        }
+
+        .carousel-button-right {
+            right: 10px;
+        }
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838;
+        }
+        
+    
+      
+
+   
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center> <button class="btn-custom" onclick="getStarted()">Back</button></center>
+        <script>
+            function getStarted() {
+                window.location.href = "home1.html";  
+            }
+        </script>
+        </div>
+    <div class="carousel-container">
+        <div class="carousel-wrapper">
+            <div class="carousel-slide">
+                <img src="blog1.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="blog2 (1).jpg" alt="Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="blog3.png" alt="Image 3">
+            </div>
+        </div>
+
+        <button class="carousel-button carousel-button-left" onclick="prevSlide()">❮</button>
+        <button class="carousel-button carousel-button-right" onclick="nextSlide()">❯</button>
+        
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const totalSlides = slides.length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            const carouselWrapper = document.querySelector('.carousel-wrapper');
+            carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+    </script>
+    
+ 
+</body>
+</html>
