@@ -1,1 +1,1 @@
-# demo
+WanderWorld Adventure Frontend
